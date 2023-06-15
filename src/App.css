@@ -1,38 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Baloo+Tamma+2:wght@500&family=Roboto+Mono:wght@300&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+
 .App {
+  font-family: "Alata", sans-serif;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header-container {
+  color: white;
+  background: darkred;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 1rem;
+  box-shadow: 5px 2px 16px 3px rgb(0 0 0 / 12%);
+}
+
+.search-container {
+  display: flex;
+  /* width:80%; */
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.inp {
+  width: 500px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/*Movie Card*/
+
+.movie-card {
+  border-radius: 6px;
+  background: darkred;
+  position: relative;
+  margin: 1rem;
+  width: 350px;
+  box-shadow: 0px 8px 20px 0px rgb(0 0 0 / 5%);
+}
+
+.movie-card > img {
+  width: 100%;
+  height: 400px;
+}
+
+.movie-card > h3,
+.movie-card > p {
+  color: black;
+  padding: 0.5rem;
+}
+
+/*Form styling*/
+
+form {
+  border-radius: 6px;
+  background-color: darkred;
+  font-size: 20px;
+  width: calc(100vw / 1.8);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+form > input {
+  padding: 0.7em;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+form > label {
+  margin-top: 15px;
+}
+
+/* general button styling */
+
+.btn {
+  outline: 0;
+  margin: 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  background: red;
+  width: 100px;
+  border: 0.5px solid rgba(0, 0, 0, 0.37);
+  padding: 0.5rem 1rem;
+}
+
+.btn-danger {
   color: white;
+  background: darkred;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-primary {
+  color: white;
+  background: darkred;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.add-movie-btn {
+  background: white;
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+}
+
+/*Annimations */
+
+.fade-out {
+  animation: fadeOut ease 2s;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Responsive  */
+
+@media (min-width: 750px) {
+  form {
+    width: calc(100vw / 3);
   }
 }
